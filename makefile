@@ -1,4 +1,4 @@
-DEPS= ll
+DEPS= program
 compile: main.cpp 
 	 g++ main.cpp -o $(DEPS)
 
