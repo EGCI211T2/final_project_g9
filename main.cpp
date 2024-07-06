@@ -1,6 +1,8 @@
 #include <iostream>
-#include <cstring>
+#include <string>
+#include <iostream>
 #include "ll.h"
+#include "stack.h"
 using namespace std;
 
 int main ()
@@ -11,7 +13,6 @@ int main ()
     list.insert("Charlie", 'M', 35, 70);
 
     list.print_list();
-
 
 
     return 0;
