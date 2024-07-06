@@ -4,7 +4,7 @@ using namespace std;
 
 class LL{
     private:
-        NodePtr hol; // head of linked list
+        NodePtr_ll hol; // head of linked list
         int size;
 
     public:
@@ -21,11 +21,11 @@ LL::LL(){
 }
 
 void LL::insert(string name_input, char gender_input, int age_input, int weight_input) {
-    NodePtr newPtr = new Node(name_input, gender_input, age_input, weight_input); // create node & put value in
+    NodePtr_ll newPtr = new Node(name_input, gender_input, age_input, weight_input); // create node & put value in
 
     if (newPtr != nullptr) { // is space available
-        NodePtr currentPtr = hol;  // pointer to current node in list
-        NodePtr previousPtr = nullptr; // pointer to previous node in list
+        NodePtr_ll currentPtr = hol;  // pointer to current node in list
+        NodePtr_ll previousPtr = nullptr; // pointer to previous node in list
 
         // loop to find the correct location in the list
         while (currentPtr != nullptr && age_input > currentPtr->get_age()) {
@@ -50,7 +50,7 @@ void LL::insert(string name_input, char gender_input, int age_input, int weight_
 void LL::remove() {
     // remove one node from linked list here
     if (hol != nullptr) {
-        NodePtr tempPtr = hol;
+        NodePtr_ll tempPtr = hol;
         hol = hol->get_next();
         delete tempPtr;
         --size;
@@ -58,7 +58,7 @@ void LL::remove() {
 }
 
 void LL::print_list() {
-    NodePtr tempPtr = hol; // Start at the head of the list
+    NodePtr_ll tempPtr = hol; // Start at the head of the list
 
     for (int i = 0; tempPtr != nullptr; i++) {
         cout << "Person " << i + 1 << endl;
@@ -74,7 +74,7 @@ void LL::print_list() {
 
 LL::~LL() {
     while (hol != nullptr) {
-        NodePtr tempPtr = hol;
+        NodePtr_ll tempPtr = hol;
         hol = hol->get_next();
         delete tempPtr;
     }
