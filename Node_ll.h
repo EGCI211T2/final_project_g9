@@ -30,7 +30,7 @@ class Node{
         ~Node();
 };
 
-typedef Node* NodePtr; // synonym for Node*
+typedef Node* NodePtr_ll; // synonym for Node*
 
 Node::Node(string name_input, char gender_input, int age_input, int weight_input) {
     nextPtr = NULL;
