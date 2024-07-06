@@ -7,6 +7,9 @@ using namespace std;
 
 int main ()
 {
+    stack food_stack;
+    food_stack.push("Pad Thai", 800);
+
     LL list;
     list.insert("Alice", 'F', 30, 65);
     list.insert("Bob", 'M', 25, 80);
