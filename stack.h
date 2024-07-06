@@ -1,18 +1,19 @@
 #ifndef stack_h
 #define stack_h
 #include "Node_stack.h"
-#include <cstring>
+#include <string>
+#include <iostream>
 using namespace std;
 
 class Stack{
     private:
-        NodePtr top;
+        NodePtr_stack top;
         int size;
     public:
         Stack();
-        void push(int);
+        void push(string, int);
         void print_list();
-        int pop();
+        void pop();
         int get_size();
         ~Stack();
 };
@@ -22,9 +23,9 @@ Stack::Stack(){
     size = 0;
 }
 
-void Stack::push(int x){    
+void Stack::push(string a, int b){
     // cout << "pushing " << x << endl;
-    NodePtr new_node = new NODE(x);
+    NodePtr_stack new_node = new NODE(a, b);
 
     if(new_node){
         new_node -> set_next(top); // First in, last out
@@ -39,7 +40,7 @@ void Stack::push(int x){
 }
 
 void Stack::print_list(){
-    NodePtr temp_ptr = top;
+    NodePtr_stack temp_ptr = top;
     for(int i=0; i<size; i++){
         temp_ptr -> print();
         cout << " ";
@@ -48,16 +49,11 @@ void Stack::print_list(){
     cout << endl;
 }
 
-void Stack::print_size(){
-    cout << size;
-}
-
-int Stack::pop(){
+void Stack::pop(){ // since one node in the stack holds two values, this pop func will need to return both int and string,
+                  // but we can't do that for now, so just don't return anything here
     // cout << "pop: ";
-    int value = 0;
     if(size > 0){
-        NodePtr temp = top;
-        value = temp -> get_value();
+        NodePtr_stack temp = top;
         top = temp -> get_next();
         delete temp;
 
@@ -67,7 +63,6 @@ int Stack::pop(){
     else{
         cout << "Unable to pop, stack empty\n";
     }
-    return value;
 }
 
 int Stack::get_size(){
