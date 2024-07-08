@@ -9,7 +9,7 @@ class LL{
 
     public:
         LL();
-        void insert(string name_input, char gender_input, int age_input, int weight_input);
+        void insert(string name_input, char gender_input, int age_input, int height_input, int weight_input);
         void remove();
         void print_list();
         ~LL();
@@ -20,8 +20,8 @@ LL::LL(){
     size = 0;
 }
 
-void LL::insert(string name_input, char gender_input, int age_input, int weight_input) {
-    NodePtr_ll newPtr = new Node(name_input, gender_input, age_input, weight_input); // create node & put value in
+void LL::insert(string name_input, char gender_input, int age_input, int height_input, int weight_input) {
+    NodePtr_ll newPtr = new Node(name_input, gender_input, age_input, height_input, weight_input); // create node & put value in
 
     if (newPtr != nullptr) { // is space available
         NodePtr_ll currentPtr = hol;  // pointer to current node in list
@@ -61,10 +61,11 @@ void LL::print_list() {
     NodePtr_ll tempPtr = hol; // Start at the head of the list
 
     for (int i = 0; tempPtr != nullptr; i++) {
-        cout << "Person " << i + 1 << endl;
+        cout << "Person: " << i+1  << endl;
         cout << "Name: " << tempPtr->get_name() << endl;
         cout << "Gender: " << tempPtr->get_gender() << endl;
         cout << "Age: " << tempPtr->get_age() << endl;
+        cout << "Height: " << tempPtr->get_height() << endl;
         cout << "Weight: " << tempPtr->get_weight() << endl;
 
         tempPtr = tempPtr->get_next(); // Move to the next node

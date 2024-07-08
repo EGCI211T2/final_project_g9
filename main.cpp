@@ -29,27 +29,29 @@ int main ()
 {
     string name;
     char gender;
-    int weight, age;
+    int weight, age, height;
     std::string filename = "menu1.txt";
-    cout << "Menu" << endl;
+    cout << "         -Menu-" << endl;
+    
     menu(filename);
     cout << endl;
 
     LL person;
-    // Stack food_stack;
-    // food_stack.push("Pad Thai", 800);
+ 
     for (int i = 0; i < 3;i++){
  
-        cout << "name" << endl;
+        cout << "Name:" << endl;
         cin >> name;
-        cout << "gender" << endl;
+        cout << "Gender:" << endl;
         cin >> gender;
-        cout << "weight" << endl;
-        cin >> weight;
-        cout << "age" << endl;
+        cout << "Age:" << endl;
         cin >> age;
+        cout << "Height:" << endl;
+        cin >> height;
+        cout << "weight:" << endl;
+        cin >> weight;
         cout << endl;
-        person.insert(name,gender,age,weight);
+        person.insert(name,gender,age,height,weight);
     }
     person.print_list();
 

@@ -1,14 +1,15 @@
-Pad Thai 
-Tom Yum Goong 
-Green Curry 
-Som Tum 
-Massaman Curry 
-Mango Sticky Rice 
-Chicken Satay 
-Pad Krapow 
-Larb 
-Tom Kha Gai 
-Pad See Ew 
-Khao Pad 
-Yam Seafood 
-Hoi Tod 
+------------------------
+| 1.Pad Thai           |
+| 2.Tom Yum Goong      |
+| 3.Green Curry        |
+| 4.Som Tum            |
+| 5.Massaman Curry     |
+| 6.Mango Sticky Rice  |
+| 7.Chicken Satay      |
+| 8.Pad Krapow         |
+| 10.Tom Kha Gai       |
+| 11.Pad See Ew        |
+| 12.Khao Pad          |
+| 13.Yam Seafood       |
+| 14.Hoi Tod           |
+------------------------
