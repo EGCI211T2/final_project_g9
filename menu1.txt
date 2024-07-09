@@ -7,6 +7,7 @@
 | 6.Mango Sticky Rice  |
 | 7.Chicken Satay      |
 | 8.Pad Krapow         |
+| 9.Larb               |
 | 10.Tom Kha Gai       |
 | 11.Pad See Ew        |
 | 12.Khao Pad          |

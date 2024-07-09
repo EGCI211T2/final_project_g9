@@ -7,6 +7,7 @@ class NODE{
         string data_string; // food name
         int data_int; // calories
         NODE *nextPtr;
+        
     public:
         NODE(string, int);
         ~NODE();
@@ -15,6 +16,7 @@ class NODE{
         NODE* get_next();
         int get_data_int();
         string get_data_string();
+        
 };
 
 typedef NODE* NodePtr_stack;
@@ -27,6 +29,7 @@ NODE::NODE(string a, int b){
 NODE* NODE::get_next(){
     return nextPtr;
 }
+
 
 int NODE::get_data_int(){
     return data_int;
