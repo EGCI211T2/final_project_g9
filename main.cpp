@@ -49,6 +49,16 @@ double calculateBMR(char gender, double weight, double height, int age) {
      return bmr;
 } 
 
+Stack choices(int a, const vector<string>& menuItems){
+    Stack foodChoices;
+    if (a > 0 && a <= menuItems.size()) {
+            foodChoices.push(menuItems[a - 0]);
+        } else {
+            cout << "Invalid choice, skipping food selection." << endl;
+        }
+        return foodChoices;
+}
+
 int main() {
     string name;
     char gender;
@@ -89,15 +99,24 @@ int main() {
         double bmr = calculateBMR(gender, weight, height, age);
         cout << "BMR: " << fixed << setprecision(2)<< bmr << " calories/day" << endl;
 
-        int choice;
+        // int choice1, choice2, choice3;
+        vector<int> vec(5);
         cout << "Choose a food item from the menu (enter the number):" << endl;
-        cin >> choice;
-
-        if (choice > 0 && choice <= menuwithcal.size()) {
-            foodChoices.push(menuwithcal[choice - 0]);
-        } else {
-            cout << "Invalid choice, skipping food selection." << endl;
+        for (int o = 0;o<5;o++) {
+            cin >> vec[o];
         }
+        
+        //output to choice func
+        for(int o : vec) {
+            choices(o,menuwithcal);
+        }
+       
+
+        // if (choice > 0 && choice <= menuwithcal.size()) {
+        //     foodChoices.push(menuwithcal[choice - 0]);
+        // } else {
+        //     cout << "Invalid choice, skipping food selection." << endl;
+        // }
     }
     person.print_list();
     
