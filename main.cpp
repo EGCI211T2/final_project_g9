@@ -11,7 +11,7 @@ using namespace std;
 
 void displayMenu(const vector<string>& menuItems) {
     cout << "         -Menu-" << endl;
-    for (size_t i = 1; i < menuItems.size(); ++i) {
+    for (size_t i = 0; i < menuItems.size(); ++i) {
         cout  << menuItems[i] << endl;
     }
 }
