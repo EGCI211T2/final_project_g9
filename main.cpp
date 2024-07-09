@@ -56,8 +56,10 @@ int main() {
     double weight, height;
     
     string filename = "menu1.txt";
+    string cal = "menu.txt";
     
     vector<string> menuItems = loadMenu(filename);
+    vector<string> menuwithcal = loadMenu(cal);
 
     if (menuItems.empty()) {
         return 1; // Exit if menu loading failed
@@ -65,6 +67,7 @@ int main() {
 
     displayMenu(menuItems);
     cout << endl;
+    displayMenu(menuwithcal);
 
     LL person;
     Stack foodChoices;
