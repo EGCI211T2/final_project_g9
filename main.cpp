@@ -61,13 +61,13 @@ int main() {
     vector<string> menuItems = loadMenu(filename);
     vector<string> menuwithcal = loadMenu(cal);
 
-    if (menuItems.empty()) {
+    if (menuItems.empty() && menuwithcal.empty()) {
         return 1; // Exit if menu loading failed
     }
 
     displayMenu(menuItems);
     cout << endl;
-    displayMenu(menuwithcal);
+    // displayMenu(menuwithcal);
 
     LL person;
     Stack foodChoices;
@@ -93,8 +93,8 @@ int main() {
         cout << "Choose a food item from the menu (enter the number):" << endl;
         cin >> choice;
 
-        if (choice > 0 && choice <= menuItems.size()) {
-            foodChoices.push(menuItems[choice - 0]);
+        if (choice > 0 && choice <= menuwithcal.size()) {
+            foodChoices.push(menuwithcal[choice - 0]);
         } else {
             cout << "Invalid choice, skipping food selection." << endl;
         }
