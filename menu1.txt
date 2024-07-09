@@ -13,4 +13,10 @@
 | 12.Khao Pad          |
 | 13.Yam Seafood       |
 | 14.Hoi Tod           |
+| 15.Fried Rice        |
+| 16.Khao Soi          |
+| 17.Penang Curry      |
+| 18.Gai hoh bai teo   |
+| 19.Thai Iced Tea     |
+| 20.Coconut Water     |
 ------------------------
