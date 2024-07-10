@@ -1,11 +1,11 @@
 
-Pad Thai (800 kcal) 
-Tom Yum Goong (200 kcal) 
-Green Curry (450 kcal) 
-Som Tum (150 kcal) 
-Massaman Curry (550 kcal) 
-Mango Sticky Rice (350 kcal) 
-Chicken Satay (250 kcal) 
+Pad Thai 800  
+Tom Yum Goong 200 
+Green Curry 450  
+Som Tum 150  
+Massaman Curry 550 
+Mango Sticky Rice 350 
+Chicken Satay git 250 
 Pad Krapow (450 kcal) 
 Larb (250 kcal) 
 Tom Kha Gai (300 kcal) 
