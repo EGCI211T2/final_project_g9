@@ -50,10 +50,10 @@ double calculateBMR(char gender, double weight, double height, int age) {
      return bmr;
 } 
 
-void choices(int a, const vector<string>& menuItems,const vector<string>& calItems, Stack food){
+void choices(int a, const vector<string>& menuItems,const vector<string>& calItems, Stack **food){
     // Stack foodChoices;
     if (a > 0 && a <= menuItems.size()) {
-            food.push(menuItems[a - 0], calItems[a-0]);
+            (*food)->push(menuItems[a - 1], calItems[a-1]);
         } else {
             cout << "Invalid choice, skipping food selection." << endl;
         }
@@ -85,7 +85,7 @@ int main() {
     // displayMenu(menuwithcal);
 
     LL person;
-    Stack foodChoices;
+    Stack *foodChoices = new Stack();
 
     for (int i = 0; i < 2; i++) {
         cout << "Name:" << endl;
@@ -113,7 +113,7 @@ int main() {
         
         //output to choice func
         for(int o : vec) {
-            choices(o,menu,calmenu,foodChoices);
+            choices(o,menu,calmenu,&foodChoices);
         }
        
 
@@ -126,10 +126,13 @@ int main() {
     person.print_list();
     
     cout << "Food choices:" << endl;
-    while (!foodChoices.isEmpty()) {
-        cout << foodChoices.topElement() << endl;
-        foodChoices.pop();
-    }
+    foodChoices->printStack();
+
+    delete foodChoices;
+    // while (!foodChoices.isEmpty()) {
+    //     cout << foodChoices.topElement() << endl;
+    //     foodChoices.pop();
+    // }
 
     return 0;
 }
