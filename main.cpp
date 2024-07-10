@@ -4,8 +4,7 @@
 #include <vector>
 #include "ll.h"
 #include "stack.h"
-#include <fstreamn>
-
+// #include <fstreamn>
 #include <iomanip>
 using namespace std;
 
@@ -51,14 +50,14 @@ double calculateBMR(char gender, double weight, double height, int age) {
      return bmr;
 } 
 
-Stack choices(int a, const vector<string>& menuItems){
-    Stack foodChoices;
+void choices(int a, const vector<string>& menuItems, Stack food){
+    // Stack foodChoices;
     if (a > 0 && a <= menuItems.size()) {
-            foodChoices.push(menuItems[a - 0]);
+            food.push(menuItems[a - 0]);
         } else {
             cout << "Invalid choice, skipping food selection." << endl;
         }
-        return foodChoices;
+        // return food;
 }
 
 int main() {
@@ -103,14 +102,14 @@ int main() {
 
         // int choice1, choice2, choice3;
         vector<int> vec(5);
-        cout << "Choose a food item from the menu (enter the number):" << endl;
+        cout << "Choose 5 foods from the menu (enter the number):" << endl;
         for (int o = 0;o<5;o++) {
             cin >> vec[o];
         }
         
         //output to choice func
         for(int o : vec) {
-            choices(o,menuwithcal);
+            choices(o,menuwithcal, foodChoices);
         }
        
 
