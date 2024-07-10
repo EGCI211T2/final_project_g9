@@ -71,7 +71,7 @@ void Stack::printStack(){
 void Stack::clearStack() {
     while (top != nullptr) {
         pop();
-        cout << " food eaten!" << endl;
+        //cout << " food have been eaten!" << endl;
     }
     size = 0;
 }

@@ -111,9 +111,14 @@ int main() {
         } else if (i == 2) {
             name_three = name;
         }
-
+        do{
+        fflush(stdin);
         cout << "Gender (M/F):" << endl;
         cin >> gender;
+        if(gender=='m'||gender=='M'||gender=='f'||gender=='F') break;
+        }while(gender!='m'||gender!='M'||gender!='f'||gender!='F');
+
+      
         cout << "Age:" << endl;
         cin >> age;
         cout << "Height (cm):" << endl;
@@ -137,14 +142,18 @@ int main() {
         for(int o : vec) {
             choices(o,menu,calmenu,&foodChoices);
         }
-
+        cout <<endl;
+        double subtracted_bmr = bmr - (foodChoices->get_total_calories());
+        subtracted_bmr = subtracted_bmr *-1; // idk why subtracted_bmr is initially negative
+        // cout << "Food calories - BMR = " << subtracted_bmr << endl;
+         cout << "BMR  = " << bmr  << " - Food calories = " << foodChoices->get_total_calories() << endl;
+         cout << "Calories left = " << bmr - foodChoices->get_total_calories() <<endl;
+         
+        
         cout << endl << "Food choices:" << endl;
         foodChoices->printStack();
 
-        double subtracted_bmr = bmr - (foodChoices->get_total_calories());
-        subtracted_bmr = subtracted_bmr * -1; // idk why subtracted_bmr is initially negative
-        // cout << "Food calories - BMR = " << subtracted_bmr << endl;
-        // cout << "Food calories " << foodChoices -> get_total_calories() << " - BMR " << bmr << endl;
+        
 
         // Store the result in the appropriate variable
         if (i == 0) {

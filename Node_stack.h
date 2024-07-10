@@ -47,7 +47,7 @@ void NODE::print(){
 }
 
 NODE::~NODE(){
-    cout<<"deleting "<< data_string << ", " << data_int << endl;
+    cout<< data_string <<" have been eaten "<< endl;
 }
 
 
