@@ -4,7 +4,8 @@
 #include <vector>
 #include "ll.h"
 #include "stack.h"
-// #include <fstreamn>
+#include "sorting.h"
+
 #include <iomanip>
 using namespace std;
 
@@ -59,7 +60,17 @@ void choices(int a, const vector<string>& menuItems,const vector<string>& calIte
 }
 
 int main() {
+    struct PersonBMR {
+        string name;
+        double bmr_difference;
+    };
+
+    int amount_user = 3; // amount of users
     string name;
+    string name_one;
+    string name_two;
+    string name_three;
+
     char gender;
     int age;
     double subracted_bmr_1 = 0;
@@ -89,9 +100,18 @@ int main() {
     LL person;
     Stack *foodChoices = new Stack();
 
-    for (int i = 0; i < 3; i++) {
-        cout << "Name:" << endl;
+    for (int i = 0; i < amount_user; i++) {
+        cout << "Name: (user " << i << ")" << endl;
         cin >> name;
+
+        if (i == 0) {
+            name_one = name;
+        } else if (i == 1) {
+            name_two = name;
+        } else if (i == 2) {
+            name_three = name;
+        }
+
         cout << "Gender (M/F):" << endl;
         cin >> gender;
         cout << "Age:" << endl;
@@ -144,8 +164,27 @@ int main() {
     }
     person.print_list();
     
-    // Sort bmr here
+    PersonBMR bmr_array[3] = {
+        {name_one, subracted_bmr_1},
+        {name_two, subracted_bmr_2},
+        {name_three, subracted_bmr_3}
+    };
+
+    // Extract BMR differences into a separate array
+    double bmr_differences[3];
+
+    for (int i = 0; i < 3; ++i) {
+        bmr_differences[i] = bmr_array[i].bmr_difference;
+    }
     
+    bubbleSort(bmr_differences, amount_user);
+    cout << "Sorted BMR: \n";
+
+    for (int i = 0; i < 3; i++) {
+        cout << fixed << setprecision(2);
+        cout << bmr_differences[i] << endl;
+    }
+
     delete foodChoices;
     // while (!foodChoices.isEmpty()) {
     //     cout << foodChoices.topElement() << endl;

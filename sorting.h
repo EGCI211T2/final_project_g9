@@ -13,7 +13,7 @@ void swap(int & x,int &y)
         x=temp;
     
 }
-void bubbleSort(int a[],int N)
+void bubbleSort(double a[],int N)
 {
     int temp, i, j;
     for(i = 0; i < N-1; i++)  
