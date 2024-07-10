@@ -50,10 +50,10 @@ double calculateBMR(char gender, double weight, double height, int age) {
      return bmr;
 } 
 
-void choices(int a, const vector<string>& menuItems, Stack food){
+void choices(int a, const vector<string>& menuItems,const vector<string>& calItems, Stack food){
     // Stack foodChoices;
     if (a > 0 && a <= menuItems.size()) {
-            food.push(menuItems[a - 0]);
+            food.push(menuItems[a - 0], calItems[a-0]);
         } else {
             cout << "Invalid choice, skipping food selection." << endl;
         }
@@ -68,11 +68,15 @@ int main() {
     
     string filename = "menu1.txt";
     string cal = "menu.txt";
+    string menuonly = "food.txt";
+    string calonly = "cal.txt";
     
-    vector<string> menuItems = loadMenu(filename);
-    vector<string> menuwithcal = loadMenu(cal);
+    vector<string> menuItems = loadMenu(filename); // main menu
+    vector<string> menuwithcal = loadMenu(cal); // menu with cal
+    vector<string> menu = loadMenu(menuonly); // menu use for food choice
+    vector<string> calmenu = loadMenu(calonly); // cal use for food choice
 
-    if (menuItems.empty() && menuwithcal.empty()) {
+    if (menuItems.empty() && menuwithcal.empty() && menu.empty() && cal.empty()) {
         return 1; // Exit if menu loading failed
     }
 
@@ -109,7 +113,7 @@ int main() {
         
         //output to choice func
         for(int o : vec) {
-            choices(o,menuwithcal,foodChoices);
+            choices(o,menu,calmenu,foodChoices);
         }
        
 

@@ -12,7 +12,7 @@ class Stack {
         
     public:
         Stack();
-        void push(string a);
+        void push(string a, string b);
         void print_list();
         void pop();
         string topElement();
