@@ -51,19 +51,21 @@ double calculateBMR(char gender, double weight, double height, int age) {
 } 
 
 void choices(int a, const vector<string>& menuItems,const vector<string>& calItems, Stack **food){
-    // Stack foodChoices;
     if (a > 0 && a <= menuItems.size()) {
             (*food)->push(menuItems[a - 1], calItems[a-1]);
         } else {
             cout << "Invalid choice, skipping food selection." << endl;
         }
-        // return food;
 }
 
 int main() {
     string name;
     char gender;
     int age;
+    int subracted_bmr_1 = 0;
+    int subracted_bmr_2 = 0;
+    int subracted_bmr_3 = 0;
+    int subtracted_bmr_temp = 0; // for display purposes
     double weight, height;
     
     string filename = "menu1.txt";
@@ -87,7 +89,7 @@ int main() {
     LL person;
     Stack *foodChoices = new Stack();
 
-    for (int i = 0; i < 2; i++) {
+    for (int i = 0; i < 3; i++) {
         cout << "Name:" << endl;
         cin >> name;
         cout << "Gender (M/F):" << endl;
@@ -115,8 +117,23 @@ int main() {
         for(int o : vec) {
             choices(o,menu,calmenu,&foodChoices);
         }
-       
 
+        cout << endl << "Food choices:" << endl;
+        foodChoices->printStack();
+
+        int subtracted_bmr = bmr - (foodChoices->get_total_calories());
+        cout << "Food calories - BMR = " << subtracted_bmr << endl;
+
+        // Store the result in the appropriate variable
+        if (i == 0) {
+            subracted_bmr_1 = subtracted_bmr;
+        } else if (i == 1) {
+            subracted_bmr_2 = subtracted_bmr;
+        } else if (i == 2) {
+            subracted_bmr_3 = subtracted_bmr;
+        }
+
+        foodChoices->clearStack();
         // if (choice > 0 && choice <= menuwithcal.size()) {
         //     foodChoices.push(menuwithcal[choice - 0]);
         // } else {
@@ -125,9 +142,7 @@ int main() {
     }
     person.print_list();
     
-    cout << "Food choices:" << endl;
-    foodChoices->printStack();
-
+    
     delete foodChoices;
     // while (!foodChoices.isEmpty()) {
     //     cout << foodChoices.topElement() << endl;

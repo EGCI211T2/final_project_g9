@@ -11,13 +11,15 @@ class Stack {
         int size;
         
     public:
-        Stack() : top(nullptr) {};
+        Stack() : top(nullptr), size(0) {}
         void push(const std::string &item, string cal);
         void print_list();
         void pop();
         string topElement();
         void printStack();
+        void clearStack();
         int get_size();
+        int get_total_calories();
         bool isEmpty(); 
         ~Stack();
         
@@ -32,13 +34,7 @@ void Stack::push(const std::string &item, string cal) {
     NodePtr_stack new_node = new NODE(item, stoi(cal));
     new_node->set_next(top);
     top = new_node;
-    // if(new_node) {
-    //     new_node->set_next(top); // First in, last out
-    //     top = new_node;
-    //     size++;
-    // } else {
-    //     cout << "Out of memory, unable to push." << endl;
-    // }
+    size++;  // Increment size
 }
 
 void Stack::print_list() {
@@ -52,7 +48,7 @@ void Stack::print_list() {
 }
 
 void Stack::pop() {
-    if(size > 0) {
+    if(top != nullptr) {
         NodePtr_stack temp = top;
         top = temp->get_next();
         delete temp;
@@ -61,13 +57,23 @@ void Stack::pop() {
         cout << "Unable to pop, stack empty" << endl;
     }
 }
+
 void Stack::printStack(){
     NodePtr_stack current = top;
     while(current != nullptr){
         current->print();
         current = current->get_next();
     }
+    cout << endl;
 }
+
+void Stack::clearStack() {
+    while (top != nullptr) {
+        pop();
+    }
+    size = 0;
+}
+
 string Stack::topElement() {
     if(size > 0) {
         return top->get_data_string();
@@ -78,6 +84,16 @@ string Stack::topElement() {
 
 int Stack::get_size() {
     return size;
+}
+
+int Stack::get_total_calories() {
+    NodePtr_stack current = top;
+    int total = 0;
+    while (current != nullptr) {
+        total += current->get_data_int();
+        current = current->get_next();
+    }
+    return total;
 }
 
 bool Stack::isEmpty() {
