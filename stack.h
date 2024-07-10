@@ -27,8 +27,8 @@ Stack::Stack() {
     size = 0;
 }
 
-void Stack::push(string a) {
-    NodePtr_stack new_node = new NODE(a, 0);
+void Stack::push(string a, string b) {
+    NodePtr_stack new_node = new NODE(a, stoi(b));
     if(new_node) {
         new_node->set_next(top); // First in, last out
         top = new_node;

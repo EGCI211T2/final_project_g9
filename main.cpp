@@ -109,7 +109,7 @@ int main() {
         
         //output to choice func
         for(int o : vec) {
-            choices(o,menuwithcal, foodChoices);
+            choices(o,menuwithcal,foodChoices);
         }
        
 
