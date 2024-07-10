@@ -62,10 +62,10 @@ int main() {
     string name;
     char gender;
     int age;
-    int subracted_bmr_1 = 0;
-    int subracted_bmr_2 = 0;
-    int subracted_bmr_3 = 0;
-    int subtracted_bmr_temp = 0; // for display purposes
+    double subracted_bmr_1 = 0;
+    double subracted_bmr_2 = 0;
+    double subracted_bmr_3 = 0;
+    double subtracted_bmr_temp = 0; // for display purposes
     double weight, height;
     
     string filename = "menu1.txt";
@@ -121,8 +121,10 @@ int main() {
         cout << endl << "Food choices:" << endl;
         foodChoices->printStack();
 
-        int subtracted_bmr = bmr - (foodChoices->get_total_calories());
-        cout << "Food calories - BMR = " << subtracted_bmr << endl;
+        double subtracted_bmr = bmr - (foodChoices->get_total_calories());
+        subtracted_bmr = subtracted_bmr * -1; // idk why subtracted_bmr is initially negative
+        // cout << "Food calories - BMR = " << subtracted_bmr << endl;
+        // cout << "Food calories " << foodChoices -> get_total_calories() << " - BMR " << bmr << endl;
 
         // Store the result in the appropriate variable
         if (i == 0) {
@@ -142,6 +144,7 @@ int main() {
     }
     person.print_list();
     
+    // Sort bmr here
     
     delete foodChoices;
     // while (!foodChoices.isEmpty()) {

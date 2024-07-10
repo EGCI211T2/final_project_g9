@@ -19,7 +19,7 @@ class Stack {
         void printStack();
         void clearStack();
         int get_size();
-        int get_total_calories();
+        double get_total_calories();
         bool isEmpty(); 
         ~Stack();
         
@@ -31,10 +31,11 @@ class Stack {
 // }
 
 void Stack::push(const std::string &item, string cal) {
-    NodePtr_stack new_node = new NODE(item, stoi(cal));
+    int calorie_value = stoi(cal);
+    NodePtr_stack new_node = new NODE(item, calorie_value);
     new_node->set_next(top);
     top = new_node;
-    size++;  // Increment size
+    size++;
 }
 
 void Stack::print_list() {
@@ -70,6 +71,7 @@ void Stack::printStack(){
 void Stack::clearStack() {
     while (top != nullptr) {
         pop();
+        cout << " food eaten!" << endl;
     }
     size = 0;
 }
@@ -86,11 +88,11 @@ int Stack::get_size() {
     return size;
 }
 
-int Stack::get_total_calories() {
+double Stack::get_total_calories() {
     NodePtr_stack current = top;
-    int total = 0;
+    double total = 0.0;
     while (current != nullptr) {
-        total += current->get_data_int();
+        total += static_cast<double>(current->get_data_int());
         current = current->get_next();
     }
     return total;
