@@ -12,6 +12,7 @@ using namespace std;
 
 
 void displayMenu(const vector<string>& menuItems) {
+    
     cout << "         -Menu-" << endl;
     for (size_t i = 0; i < menuItems.size(); ++i) {
         cout  << menuItems[i] << endl;
@@ -93,7 +94,7 @@ int main() {
         return 1; // Exit if menu loading failed
     }
 
-    displayMenu(menuItems);
+    //displayMenu(menuItems);
     cout << endl;
     // displayMenu(menuwithcal);
 
@@ -101,6 +102,9 @@ int main() {
     Stack *foodChoices = new Stack();
 
     for (int i = 0; i < amount_user; i++) {
+        displayMenu(menuItems);
+        cout<< endl;
+
         cout << "Name: (user " << i << ")" << endl;
         cin >> name;
 
