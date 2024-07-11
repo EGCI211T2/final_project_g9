@@ -188,10 +188,10 @@ int main() {
         foodChoices->printStack();
         foodChoices->clearStack();
 
-        for (int k = 0; k < amount_user; k++) {
-            cout << subtracted_bmr[k];
+        // for (int k = 0; k < amount_user; k++) {
+        //     cout << subtracted_bmr[k];
             
-        }
+        // }
 
         bmr_differences[amount_user];
         double bmr_array[amount_user];
