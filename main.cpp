@@ -104,9 +104,11 @@ int main() {
     };
 
     int amount_user;
+    do{
     cout << "amount user : ";
     cin >> amount_user;
     cout << endl;
+    }while(amount_user<0);
 
     string name[amount_user];
     char gender;
