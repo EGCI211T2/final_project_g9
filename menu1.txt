@@ -16,7 +16,7 @@
 | 15.Fried Rice        |
 | 16.Khao Soi          |
 | 17.Penang Curry      |
-| 18.Gai hoh bai teo   |
+| 18.Gai hoh bai teoy  |
 | 19.Thai Iced Tea     |
 | 20.Coconut Water     |
 ------------------------

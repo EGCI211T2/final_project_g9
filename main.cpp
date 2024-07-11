@@ -67,7 +67,7 @@ int main() {
     };
 
     int amount_user = 3; // amount of users
-    string name;
+    string name[amount_user];
     string name_one;
     string name_two;
     string name_three;
@@ -100,21 +100,27 @@ int main() {
 
     LL person;
     Stack *foodChoices = new Stack();
+    
 
     for (int i = 0; i < amount_user; i++) {
         displayMenu(menuItems);
         cout<< endl;
 
-        cout << "Name: (user " << i << ")" << endl;
-        cin >> name;
+        cout << "Name: (user "<<i+1 << name[i] << ")" << endl;
+        for(int j=i;j< i+1;j++)
+    {
+        cout<<"Name "<<i+1<<" :"<<" ";
+        cin>>name[i];
+    }
+        //cin >> name;
 
-        if (i == 0) {
+        /*if (i == 0) {
             name_one = name;
         } else if (i == 1) {
             name_two = name;
         } else if (i == 2) {
             name_three = name;
-        }
+        }*/
         do{
         fflush(stdin);
         cout << "Gender (M/F):" << endl;
@@ -130,7 +136,7 @@ int main() {
         cout << "Weight (kg):" << endl;
         cin >> weight;
         cout << endl;
-        person.insert(name, gender, age, height, weight);
+        person.insert(name[i], gender, age, height, weight);
 
         double bmr = calculateBMR(gender, weight, height, age);
         cout << "BMR: " << fixed << setprecision(2)<< bmr << " calories/day" << endl;
@@ -195,7 +201,9 @@ int main() {
 
     for (int i = 0; i < 3; i++) {
         cout << fixed << setprecision(2);
-        cout << bmr_differences[i] << endl;
+            
+                cout << bmr_differences[i] << endl;
+            
     }
 
     delete foodChoices;
