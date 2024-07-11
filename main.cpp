@@ -207,7 +207,7 @@ int main() {
         }
         bmr_differences[i] = subtracted_bmr[i];
     }
-
+    cout<<endl;
     person.print_list();
 
      
@@ -223,7 +223,7 @@ int main() {
     cout << "Sorted BMR: "<<endl;
 
     for (int i = 0; i < amount_user; i++) {
-        cout << "User " << i << ", " << name[i] << ": " << "BMR (" << bmr[i] << ") - Eaten Calories (" << eaten_cal[i] << ") = ";
+        cout << "User " << i+1 << ", " << name[i] << ": " << "BMR (" << bmr[i] << ") - Eaten Calories (" << eaten_cal[i] << ") = ";
         
         cout << fixed << setprecision(2) << bmr_differences[i] << endl;
     }
