@@ -205,7 +205,8 @@ int main() {
         }
         bmr_differences[i] = subtracted_bmr[i];
     }
-
+    
+    cout<<endl;
     person.print_list();
 
      
