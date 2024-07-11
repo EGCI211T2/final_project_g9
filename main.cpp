@@ -55,6 +55,7 @@ cout<<"@@@@@@@@@@@@@@@@@@&&((((####&****/*,,,,,,,,,*****%####&#&#&&&&&&&&@@@@@@@
 cout<<"@@@ @@@@@@@@@@@@@@@@@@@&&&&@@@@ %    @@ @,@@@@@ @@@@@@@@@@@@@@@@@@@@@@@@@@@ & @@";cout<<endl;
 cout<<"* @    @ (  @ @@@@@@@@@@@@@@@@%   &  @@@ @  @ /. . @    @ @@@@@@@@@@@@@@@@@  @  ";cout<<endl;
 
+
 }
 
 vector<string> loadMenu(const string& filename) {
@@ -144,16 +145,16 @@ int main() {
 
         do {
             fflush(stdin);
-            cout << "Gender (M/F):" << endl;
+            cout << "Gender (M/F):" ;
             cin >> gender;
             if (gender == 'm' || gender == 'M' || gender == 'f' || gender == 'F') break;
         } while (gender != 'm' || gender != 'M' || gender != 'f' || gender != 'F');
 
-        cout << "Age:" << endl;
+        cout << "Age:" ;
         cin >> age;
-        cout << "Height (cm):" << endl;
+        cout << "Height (cm):" ;
         cin >> height;
-        cout << "Weight (kg):" << endl;
+        cout << "Weight (kg):" ;
         cin >> weight;
         cout << endl;
 
