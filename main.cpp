@@ -22,6 +22,7 @@ void displayMenu(const vector<string>& menuItems) {
 
 void fat()
 {
+    cout<<"Result: Taooooooo aounnnnnnnn!!!";cout<<endl;
     cout<<"  @@ @#  # @ @@#@@@@@@@@@@@@@@@    @@ @@  @#  @  @ #@# @ @  @@@@@@@@@@@@@@@@  &@@";cout<<endl;
     cout<<"@@@@@@@@@@@@/@@@@@@@@@@@@@@@@@@     &@@@@@@@@@@@@@@@@@@@@#@@@@@@@@@@@@@@@@@@    ";cout<<endl;
     cout<<"@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@&&@@@@@@@@@@@@@@@@@@@@@@@@@@@@@";cout<<endl;
