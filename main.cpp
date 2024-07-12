@@ -222,6 +222,7 @@ int main() {
 
 
     bubbleSort(bmr_differences, amount_user);
+    /*
     cout << "Sorted BMR: "<<endl;
 
     for (int i = 0; i < amount_user; i++) {
@@ -229,6 +230,15 @@ int main() {
         
         cout << fixed << setprecision(2) << bmr_differences[i] << endl;
     }
+    */
+    cout << "Sorted Subtracted BMRs: "<<endl;
+
+    for (int i = 0; i < amount_user; i++) {
+        cout << i+1 << ". " << name[i] << ": " << "BMR (" << bmr[i] << ") - Eaten Calories (" << eaten_cal[i] << ") = ";
+        
+        cout << fixed << setprecision(2) << bmr_differences[i] << endl;
+    }
+
 
     delete foodChoices;
 
