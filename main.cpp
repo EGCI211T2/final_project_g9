@@ -188,7 +188,7 @@ int main() {
             fat();
         }
         else if(bmr[i] - foodChoices->get_total_calories()>0&&bmr[i] - foodChoices->get_total_calories()<300) cout<<" Balance ";
-        else cout<< "lack nutrition";
+        else cout<< "Result : lack of nutrition";
         cout << endl << "Food choices:" << endl;
         foodChoices->printStack();
         foodChoices->clearStack();
